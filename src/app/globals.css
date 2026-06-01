@@ -1,26 +1,80 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* Ocean / Aqua-Teal theme */
+  --color-dolphin-900: #06141B;
+  --color-dolphin-800: #0B2027;
+  --color-dolphin-blue: #14B8A6;
+  --color-dolphin-cyan: #22D3EE;
+
+  /* Re-map the accent scale (used everywhere as blue-*) to teal */
+  --color-blue-300: #5EEAD4;
+  --color-blue-400: #2DD4BF;
+  --color-blue-500: #14B8A6;
+  --color-blue-600: #0D9488;
+  --color-blue-700: #0F766E;
+  --color-blue-900: #134E4A;
+
+  /* Cool the neutral surface scale toward deep ocean slate */
+  --color-slate-700: #2B4A52;
+  --color-slate-800: #16323A;
+  --color-slate-900: #0B2027;
+
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-poppins);
+  --font-accent: var(--font-sora);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@custom-variant dark (&:is(.dark *));
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer utilities {
+  .glass {
+    @apply bg-white/10 backdrop-blur-md border border-white/20 shadow-[0_4px_30px_rgba(0,0,0,0.1)];
+  }
+  .glass-dark {
+    @apply bg-black/30 backdrop-blur-md border border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.3)];
+  }
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-linear-to-r from-dolphin-blue to-dolphin-cyan;
   }
 }
 
+:root {
+  --background: #ffffff;
+  --foreground: #06141B;
+}
+
+.dark {
+  --background: #06141B;
+  --foreground: #f0fdfa;
+}
+
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), sans-serif;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading), sans-serif;
+}
+
+.font-accent {
+  font-family: var(--font-accent), sans-serif;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+::-webkit-scrollbar-thumb {
+  background: #2B4A52;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #14B8A6;
 }
