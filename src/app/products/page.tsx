@@ -31,7 +31,7 @@ function getCategory(product: Product): Exclude<CategoryId, 'all'> {
     if (/(monitor|smart tv|\btv\b|display|led)/.test(text)) {
         return 'tv';
     }
-    if (/(neckband|speaker|home theatre|home theater|earbud|headphone|audio|soundbar)/.test(text)) {
+    if (/(neckband|speaker|home theatre|home theater|earbud|earphone|headphone|audio|soundbar|bullets|wireless|tws)/.test(text)) {
         return 'audio';
     }
     if (/(ups|inverter|charger|battery)/.test(text)) {

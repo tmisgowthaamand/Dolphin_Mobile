@@ -16,12 +16,13 @@ export default function Home() {
     { title: 'Audio & Home', desc: 'Home theatre & speakers', icon: <Speaker size={22} />, image: 'https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=800&q=80' },
   ];
 
-  const stats = [
-    { value: '14+', label: 'Years of Trust' },
-    { value: '10K+', label: 'Happy Customers' },
-    { value: '500+', label: 'Products' },
-    { value: '4.8★', label: 'Avg. Rating' },
+  const heroHighlights = [
+    { value: '2011', label: 'Established' },
+    { value: '100%', label: 'Genuine Products' },
+    { value: 'All TN', label: 'Fast Delivery' },
   ];
+
+  const brands = ['Apple', 'Lenovo', 'HP', 'Sony VAIO', 'Vivo', 'OPPO', 'Realme', 'Canon'];
 
   const testimonials = [
     { name: 'Karthik R.', role: 'Paramakudi', text: 'Bought my phone here and the service was excellent. Genuine product at the best price in town.' },
@@ -70,9 +71,9 @@ export default function Home() {
                 </Link>
               </div>
 
-              {/* Hero quick stats */}
+              {/* Hero quick highlights */}
               <div className="grid grid-cols-3 gap-4 max-w-md">
-                {stats.slice(0, 3).map((s, i) => (
+                {heroHighlights.map((s, i) => (
                   <div key={i}>
                     <div className="text-2xl lg:text-3xl font-bold font-heading text-white">{s.value}</div>
                     <div className="text-xs text-slate-400">{s.label}</div>
@@ -228,22 +229,26 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Stats Band */}
+      {/* Top Brands */}
       <section className="py-20">
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="glass-dark rounded-3xl border border-slate-700/50 p-10">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-              {stats.map((s, i) => (
-                <motion.div
+            <div className="text-center mb-10">
+              <h2 className="text-2xl md:text-3xl font-bold font-heading mb-3">Top Brands We Carry</h2>
+              <p className="text-slate-400 max-w-2xl mx-auto">Genuine products from the brands you trust, all under one roof.</p>
+            </div>
+            <div className="flex flex-wrap items-center justify-center gap-4">
+              {brands.map((brand, i) => (
+                <motion.span
                   key={i}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 15 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
+                  transition={{ delay: i * 0.05 }}
+                  className="px-6 py-3 rounded-xl bg-slate-800/50 border border-slate-700/50 text-slate-200 font-semibold hover:border-blue-500/50 hover:text-white transition-colors"
                 >
-                  <div className="text-4xl lg:text-5xl font-bold font-heading text-gradient mb-2">{s.value}</div>
-                  <div className="text-slate-400 text-sm">{s.label}</div>
-                </motion.div>
+                  {brand}
+                </motion.span>
               ))}
             </div>
           </div>
