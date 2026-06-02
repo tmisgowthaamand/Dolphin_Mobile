@@ -10,6 +10,12 @@ const remoteImageHosts = [
   "ehpworld.com",
   "rukminim2.flixcart.com",
   "www.acer.dotcomstores.in",
+  "encrypted-tbn2.gstatic.com",
+  "encrypted-tbn1.gstatic.com",
+  "www.numericups.com",
+  "m.media-amazon.com",
+  "tiimg.tistatic.com",
+  "www.xerox.com",
 ];
 
 const nextConfig: NextConfig = {

@@ -8,6 +8,7 @@ export interface Product {
   name: string;
   priceINR: number;
   image: string;
+  gallery?: string[];
   brand: string;
   description: string;
   specifications: Specification[];
@@ -21,8 +22,8 @@ export const products: Product[] = [
   {
     id: "1",
     name: "Lenovo Laptop Core i5",
-    priceINR: 10000,
-    image: "/images/products/product-1.jpeg",
+    priceINR: 18999,
+    image: "/images/products/product-1-lenovo.jpeg",
     brand: "Lenovo",
     description:
       "A dependable everyday Lenovo laptop powered by an Intel Core i5 processor, ideal for students, home offices and browsing. The fast SSD keeps Windows snappy while the wide 15.6-inch screen makes long work sessions comfortable. Carefully inspected and ready to use straight out of our Paramakudi showroom.",
@@ -48,7 +49,7 @@ export const products: Product[] = [
   {
     id: "2",
     name: "Canon Printer",
-    priceINR: 13000,
+    priceINR: 14999,
     image: "/images/products/product-2.jpeg",
     brand: "Canon",
     description:
@@ -74,8 +75,8 @@ export const products: Product[] = [
   {
     id: "3",
     name: "Lenovo ThinkPad",
-    priceINR: 45000,
-    image: "https://upload.wikimedia.org/wikipedia/commons/f/f4/Lenovo_ThinkPad_Edge_E430_013_%288339833707%29.jpg",
+    priceINR: 38999,
+    image: "/images/products/product-3-thinkpad.jpeg",
     brand: "Lenovo",
     description:
       "Work without compromise on the Lenovo ThinkPad, the laptop that earned its reputation in boardrooms and on long-haul flights. The famously tactile keyboard, rugged matte chassis and dependable internals are tuned for people who type all day and travel often. It powers through spreadsheets, video calls and dozens of browser tabs while staying quiet and cool.",
@@ -101,7 +102,7 @@ export const products: Product[] = [
   {
     id: "4",
     name: "Sony VAIO Laptop",
-    priceINR: 30000,
+    priceINR: 32999,
     image: "https://rukminim2.flixcart.com/image/480/480/computer/n/a/v/sony-vaio-notebook-e1411a-original-imadkry24urjrzqk.jpeg",
     brand: "Sony VAIO",
     description:
@@ -155,7 +156,7 @@ export const products: Product[] = [
   {
     id: "6",
     name: "OnePlus Bullets Wireless Z3",
-    priceINR: 2000,
+    priceINR: 1799,
     image: "/images/products/product-6.jpeg",
     brand: "OnePlus",
     description:
@@ -183,8 +184,8 @@ export const products: Product[] = [
   {
     id: "7",
     name: "Foxin UPS",
-    priceINR: 2500,
-    image: "/images/products/product-7.jpeg",
+    priceINR: 1899,
+    image: "https://rukminim2.flixcart.com/image/1280/1280/xif0q/ups/q/a/e/30-360-ideal-ups-for-pc-laptops-gaming-led-indicator-alarm-original-imahcyy5jnzt7cjc.jpeg?q=90",
     brand: "Foxin",
     description:
       "A compact Foxin UPS that keeps your desktop and router running through sudden power cuts and voltage dips. It gives you enough backup time to save your work and shut down safely, while protecting devices from surges and spikes.",
@@ -207,25 +208,27 @@ export const products: Product[] = [
   },
   {
     id: "8",
-    name: "Lenovo Business Laptop",
-    priceINR: 25000,
-    image: "/images/products/product-8.jpeg",
+    name: "Lenovo ThinkBook 16 (Ryzen 7)",
+    priceINR: 62999,
+    image: "/images/products/product-8-thinkbook.jpeg",
     brand: "Lenovo",
     description:
-      "A capable Lenovo business laptop with generous memory and storage for demanding workdays. Run multiple apps, large spreadsheets and video calls without slowdowns. Designed for professionals who need speed and dependability all day.",
+      "The Lenovo ThinkBook 16 is a sleek, business-class laptop that pairs a powerful AMD Ryzen 7 processor with 16 GB of RAM and a fast 512 GB SSD. Its expansive 16-inch display gives you more room to work, while the durable aluminium build and full port selection make it a confident everyday performer. Ships with Windows 11 Pro, ready for serious productivity, multitasking and content work.",
     specifications: [
-      { name: "Processor", value: "Intel Core i5 / i7" },
+      { name: "Processor", value: "AMD Ryzen 7" },
       { name: "Memory", value: "16 GB DDR4 RAM" },
-      { name: "Storage", value: "512 GB SSD" },
-      { name: "Display", value: "14-inch Full HD IPS" },
-      { name: "Operating System", value: "Windows 11" },
-      { name: "Connectivity", value: "Wi-Fi 6, Bluetooth, USB-C, HDMI" },
+      { name: "Storage", value: "512 GB NVMe SSD" },
+      { name: "Display", value: "16-inch WUXGA (1920 x 1200)" },
+      { name: "Graphics", value: "AMD Radeon Graphics" },
+      { name: "Operating System", value: "Windows 11 Pro" },
+      { name: "Connectivity", value: "Wi-Fi 6, Bluetooth, USB-C, USB-A, HDMI" },
     ],
     features: [
-      "Smooth heavy multitasking with 16 GB RAM",
-      "Fast 512 GB SSD storage",
-      "Crisp Full HD IPS display",
-      "Business-ready ports and connectivity",
+      "Powerful AMD Ryzen 7 performance",
+      "16 GB RAM for heavy multitasking",
+      "Fast 512 GB NVMe SSD storage",
+      "Large 16-inch WUXGA display",
+      "Windows 11 Pro for business use",
     ],
     stock: true,
     rating: 4.8,
@@ -234,8 +237,8 @@ export const products: Product[] = [
   {
     id: "9",
     name: "Numeric UPS/Inverter",
-    priceINR: 2800,
-    image: "/images/products/product-9.jpeg",
+    priceINR: 3299,
+    image: "https://www.numericups.com/sites/default/files/2022-06/eXf.png",
     brand: "Numeric",
     description:
       "A trusted Numeric UPS that delivers stable backup for computers and home electronics. Line-interactive design corrects voltage fluctuations and switches over the moment power drops, keeping your devices safe and your work protected.",
@@ -259,8 +262,8 @@ export const products: Product[] = [
   {
     id: "10",
     name: "DAICHI Battery Charger",
-    priceINR: 3000,
-    image: "/images/products/product-10.jpeg",
+    priceINR: 1499,
+    image: "https://m.media-amazon.com/images/I/61sP1c+fnkL._AC_SY879_.jpg",
     brand: "DAICHI",
     description:
       "A smart DAICHI battery charger that charges quickly while protecting battery health. Built-in safeguards prevent overcharging and overheating, making it a safe, set-and-forget choice for your everyday charging needs.",
@@ -282,35 +285,9 @@ export const products: Product[] = [
     reviews: 197,
   },
   {
-    id: "11",
-    name: "Sony VAIO Premium Laptop",
-    priceINR: 30000,
-    image: "/images/products/product-11.jpeg",
-    brand: "Sony VAIO",
-    description:
-      "A premium Sony VAIO laptop that pairs a powerful Core i7 with fast 16 GB memory and a roomy 1 TB SSD. From content creation to heavy multitasking, it stays quick and cool. A refined, high-performance machine for users who want the best.",
-    specifications: [
-      { name: "Processor", value: "Intel Core i7" },
-      { name: "Memory", value: "16 GB DDR4 RAM" },
-      { name: "Storage", value: "1 TB SSD" },
-      { name: "Display", value: "15.6-inch Full HD" },
-      { name: "Operating System", value: "Windows 11" },
-      { name: "Connectivity", value: "Wi-Fi 6, Bluetooth, USB-C, HDMI" },
-    ],
-    features: [
-      "Powerful Core i7 performance",
-      "Huge 1 TB SSD for files and media",
-      "16 GB RAM for serious multitasking",
-      "Premium, slim metal design",
-    ],
-    stock: true,
-    rating: 4.8,
-    reviews: 209,
-  },
-  {
     id: "12",
     name: "enter H61 Desktop Motherboard",
-    priceINR: 5200,
+    priceINR: 2999,
     image: "/images/products/product-12.jpeg",
     brand: "enter",
     description:
@@ -339,8 +316,8 @@ export const products: Product[] = [
   {
     id: "13",
     name: "Zebronics H61 Motherboard",
-    priceINR: 6000,
-    image: "/images/products/product-13.jpeg",
+    priceINR: 3499,
+    image: "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSZ-hAyOmJ8pF_FvyGNa_mOvvFXNks_XdXbHvD2cfwgcPn_p56Dg-0SlYFu3z57EUlgIsGyayH6txsUuJFGbArnErVPZNDYeHDAVBLSRmqw7qWJu2Dl1AI_IgRimoMjT7qtVtHaFA&usqp=CAc",
     brand: "Zebronics",
     description:
       "The Zebronics H61 motherboard is a sturdy LGA 1155 board ideal for everyday desktops, office systems, and budget builds. It supports 2nd and 3rd generation Intel Core processors with dual-channel DDR3 memory, and adds a handy M.2 slot plus SATA connectors for fast, flexible storage. With VGA and HDMI outputs and all the essential ports, it's a dependable, value-for-money foundation from a trusted Indian brand.",
@@ -368,7 +345,7 @@ export const products: Product[] = [
   {
     id: "14",
     name: "Acer Desktop CPU",
-    priceINR: 16000,
+    priceINR: 27999,
     image: "https://www.acer.dotcomstores.in/wp-content/uploads/2025/08/desktop.jpg",
     brand: "Acer",
     description:
@@ -393,52 +370,51 @@ export const products: Product[] = [
   },
   {
     id: "15",
-    name: "Philips Home Theatre Speaker",
-    priceINR: 24000,
-    image: "/images/products/product-16.jpeg",
+    name: "Philips MMS2580B 2.1 Multimedia Speaker",
+    priceINR: 3490,
+    image: "https://rukminim2.flixcart.com/image/1280/1280/jz4g3gw0/speaker/home-audio-speaker/c/y/m/philips-mms2580b-94-original-imafj7z526dwhjsb.jpeg?q=90",
     brand: "Philips",
     description:
-      "Fill your living room with cinematic sound using this Philips home theatre system. Powerful multi-channel speakers and a deep-hitting subwoofer bring movies, music and games to life. Connect easily over Bluetooth, HDMI or USB.",
+      "Power up your music, movies and games with the Philips MMS2580B 2.1 channel multimedia speaker system. A dedicated subwoofer delivers deep, punchy bass while the two satellite speakers keep vocals and highs crisp and clear. With Bluetooth, USB and AUX inputs plus handy controls, it's a versatile, value-for-money upgrade for any desktop or TV setup.",
     specifications: [
-      { name: "Channels", value: "5.1 surround sound" },
-      { name: "Total Output", value: "High-wattage with subwoofer" },
-      { name: "Connectivity", value: "Bluetooth, HDMI (ARC), USB, AUX" },
-      { name: "Subwoofer", value: "Dedicated deep-bass subwoofer" },
-      { name: "Control", value: "Remote control included" },
+      { name: "Channels", value: "2.1 (2 satellites + subwoofer)" },
+      { name: "Total Output", value: "Powerful RMS with deep bass" },
+      { name: "Connectivity", value: "Bluetooth, USB, AUX" },
+      { name: "Subwoofer", value: "Dedicated wooden bass subwoofer" },
+      { name: "Controls", value: "Volume & bass control" },
     ],
     features: [
-      "Immersive 5.1 surround sound",
-      "Powerful bass from dedicated subwoofer",
-      "Wireless Bluetooth streaming",
-      "HDMI ARC for one-cable TV setup",
+      "Punchy 2.1 channel sound with subwoofer",
+      "Bluetooth, USB and AUX connectivity",
+      "Deep bass for movies and music",
+      "Compact, desk-friendly design",
     ],
     stock: true,
-    rating: 4.7,
+    rating: 4.4,
     reviews: 106,
   },
   {
     id: "16",
-    name: "Samsung Smart LED TV",
-    priceINR: 18000,
-    image: "/images/products/product-17.jpeg",
+    name: "Samsung 24-inch FHD LED Monitor",
+    priceINR: 9499,
+    image: "https://tiimg.tistatic.com/fp/1/007/784/1080p-resolution-fhd-24-inch-screen-display-samsung-led-monitor--860.jpg",
     brand: "Samsung",
     description:
-      "Bring home the brilliance of Samsung with this Smart LED TV that doubles beautifully as a large display. Powered by Samsung's PurColor and HDR processing, it delivers crisp Full HD visuals with lifelike colours and deep contrast. The built-in Smart Hub gives you instant access to Netflix, YouTube, Prime Video and more over Wi-Fi, while multiple HDMI and USB ports let you connect a set-top box, console or PC. Slim, stylish and packed with Samsung's trusted picture quality.",
+      "Upgrade your desk with the Samsung 24-inch Full HD LED monitor, built for crisp visuals and comfortable all-day viewing. The 1920 x 1080 panel delivers sharp detail and vivid colour, while Samsung's Eye Saver Mode and Flicker Free technology reduce strain during long work or study sessions. A slim, bezel-light design with HDMI and VGA inputs makes it a perfect fit for home, office or casual gaming.",
     specifications: [
       { name: "Brand", value: "Samsung" },
-      { name: "Display", value: "LED panel, Full HD (1920 x 1080)" },
-      { name: "Picture Engine", value: "PurColor with HDR" },
-      { name: "Smart Platform", value: "Tizen Smart Hub with built-in apps" },
-      { name: "Refresh Rate", value: "60 Hz" },
-      { name: "Connectivity", value: "Wi-Fi, HDMI x2, USB x2, AV" },
-      { name: "Audio", value: "Dolby Digital stereo speakers" },
+      { name: "Screen Size", value: "24-inch (60.4 cm)" },
+      { name: "Resolution", value: "Full HD 1920 x 1080" },
+      { name: "Panel", value: "LED-backlit" },
+      { name: "Refresh Rate", value: "Up to 75 Hz" },
+      { name: "Eye Comfort", value: "Eye Saver Mode & Flicker Free" },
+      { name: "Connectivity", value: "HDMI & VGA" },
     ],
     features: [
-      "Samsung Smart Hub with Netflix, YouTube & Prime Video",
-      "Vibrant Full HD picture with PurColor & HDR",
-      "Built-in Wi-Fi and screen mirroring",
-      "Multiple HDMI and USB inputs",
-      "Doubles as a large smart display or monitor",
+      "Sharp Full HD 1080p picture",
+      "Eye Saver Mode & Flicker Free for less strain",
+      "Slim, space-saving design",
+      "HDMI and VGA inputs",
     ],
     stock: true,
     rating: 4.6,
@@ -446,24 +422,25 @@ export const products: Product[] = [
   },
   {
     id: "17",
-    name: "Epson Skin Printing Machine",
-    priceINR: 35000,
-    image: "/images/products/product-20.jpeg",
+    name: "Epson 5113 Large Format Digital Printer (1.8m)",
+    priceINR: 125000,
+    image: "https://tiimg.tistatic.com/fp/1/002/732/1-8m-high-speed-digital-printing-machine-with-epson-5113-heads-783.jpg",
     brand: "Epson",
     description:
-      "A precision Epson skin/wrap printing machine for creating custom mobile skins, stickers and device wraps. It prints fine detail with rich colour, helping small businesses offer personalised back-skins and protective wraps on demand.",
+      "A high-speed 1.8-metre large-format digital printing machine powered by Epson 5113 printheads, built for banners, flex, vinyl and signage production. It delivers sharp, vibrant, photo-grade output at impressive speeds, making it ideal for print shops, advertising studios and commercial production. Wide media support and reliable head performance keep your business running all day.",
     specifications: [
-      { name: "Print Technology", value: "High-resolution inkjet" },
-      { name: "Application", value: "Mobile skins, wraps & stickers" },
-      { name: "Resolution", value: "Fine-detail colour printing" },
-      { name: "Media", value: "Skin & vinyl sheets" },
-      { name: "Connectivity", value: "USB & software driven" },
+      { name: "Print Heads", value: "Epson 5113 (eco-solvent/dye)" },
+      { name: "Print Width", value: "1.8 m (6 feet) large format" },
+      { name: "Resolution", value: "High-resolution photo-grade output" },
+      { name: "Media", value: "Flex, vinyl, banner & vinyl rolls" },
+      { name: "Application", value: "Banners, signage & advertising" },
+      { name: "Connectivity", value: "USB / network with RIP software" },
     ],
     features: [
-      "Custom mobile skins and wraps",
-      "Sharp, vibrant colour output",
-      "Great for small-business income",
-      "Supports popular skin templates",
+      "High-speed Epson 5113 printhead performance",
+      "Wide 1.8 m large-format printing",
+      "Sharp, vibrant photo-grade colour",
+      "Built for commercial signage production",
     ],
     stock: true,
     rating: 4.6,
@@ -472,7 +449,7 @@ export const products: Product[] = [
   {
     id: "18",
     name: "POCO X3 Pro",
-    priceINR: 15999,
+    priceINR: 17999,
     image: "https://upload.wikimedia.org/wikipedia/commons/7/7c/Poco_X3_Pro.jpg",
     brand: "POCO",
     description:
@@ -499,7 +476,7 @@ export const products: Product[] = [
   {
     id: "19",
     name: "Vivo V27 5G",
-    priceINR: 27999,
+    priceINR: 32999,
     image: "https://in-exstatic-vivofs.vivo.com/gdHFRinHEMrj3yPG/1677578839819/d3a0e8fda185e0e930eec73464b3fd3f.png",
     brand: "Vivo",
     description:
@@ -525,7 +502,7 @@ export const products: Product[] = [
   {
     id: "20",
     name: "Vivo Y200e 5G",
-    priceINR: 19999,
+    priceINR: 21999,
     image: "https://in-exstatic-vivofs.vivo.com/gdHFRinHEMrj3yPG/1707028895017/5ac16cd09b116cb44f95c7057933a5b5.png",
     brand: "Vivo",
     description:
@@ -605,7 +582,7 @@ export const products: Product[] = [
   {
     id: "23",
     name: "HP Laptop",
-    priceINR: 55000,
+    priceINR: 48999,
     image: "https://ehpworld.com/wp-content/uploads/2021/10/HP14s-Dq2535Tu-left-rearview.jpg",
     brand: "HP",
     description:
@@ -631,25 +608,27 @@ export const products: Product[] = [
   },
   {
     id: "24",
-    name: "Xerox Heavy Duty Printer Machine",
-    priceINR: 140000,
-    image: "/images/products/product-28.jpeg",
+    name: "Xerox VersaLink C7100 Color Multifunction Printer",
+    priceINR: 150000,
+    image: "https://www.xerox.com/assets/images/brand_engine/products/hardware/VLC71XX/hero_960x960.png",
     brand: "Xerox",
     description:
-      "A heavy-duty Xerox multifunction printer designed for high-volume offices and print shops. It prints, copies, scans and handles large paper loads with speed and consistency, keeping busy workplaces running without interruptions.",
+      "The Xerox VersaLink C7100 series is a powerful A3 colour multifunction printer engineered for busy offices and print rooms. It prints, copies, scans and emails with crisp colour accuracy and impressive speed, while the large touchscreen and cloud-ready workflows make everyday tasks effortless. With high paper capacity, auto duplexing and robust security, it keeps demanding workplaces productive all day.",
     specifications: [
-      { name: "Type", value: "Multifunction Laser (Print/Copy/Scan)" },
-      { name: "Print Speed", value: "High-volume, up to 40+ ppm" },
-      { name: "Duty Cycle", value: "Heavy monthly volume" },
-      { name: "Paper Handling", value: "Large trays & auto duplex" },
-      { name: "Connectivity", value: "Network, Wi-Fi & USB" },
-      { name: "Display", value: "Touchscreen control panel" },
+      { name: "Type", value: "A3 Colour Laser Multifunction (Print/Copy/Scan/Email)" },
+      { name: "Print Speed", value: "Up to 35 ppm colour & mono" },
+      { name: "Resolution", value: "Up to 1200 x 2400 dpi" },
+      { name: "Paper Handling", value: "High-capacity trays with auto duplex" },
+      { name: "Display", value: "Large colour touchscreen UI" },
+      { name: "Connectivity", value: "Ethernet, Wi-Fi, USB, cloud & mobile print" },
+      { name: "Security", value: "Built-in enterprise security features" },
     ],
     features: [
-      "Built for high-volume office printing",
-      "Fast multifunction print, copy and scan",
-      "Large paper trays with auto duplex",
-      "Network and wireless ready",
+      "A3 colour multifunction for high-volume offices",
+      "Fast print, copy, scan and email",
+      "Cloud-ready workflows and mobile printing",
+      "High paper capacity with auto duplex",
+      "Large intuitive touchscreen control",
     ],
     stock: true,
     rating: 4.8,

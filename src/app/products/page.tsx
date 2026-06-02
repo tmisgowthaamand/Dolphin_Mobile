@@ -22,7 +22,7 @@ function getCategory(product: Product): Exclude<CategoryId, 'all'> {
     if (/(iphone|smartphone|poco|vivo|oppo|realme|redmi|samsung|galaxy|5g\b|phone)/.test(text)) {
         return 'mobiles';
     }
-    if (/(laptop|thinkpad|vaio|notebook|macbook)/.test(text)) {
+    if (/(laptop|thinkpad|thinkbook|vaio|notebook|macbook)/.test(text)) {
         return 'laptops';
     }
     if (/(printer|printing|xerox)/.test(text)) {

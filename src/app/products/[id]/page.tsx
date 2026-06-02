@@ -20,10 +20,15 @@ export default function ProductDetailsPage({ params }: { params: Promise<{ id: s
     const [activeTab, setActiveTab] = useState('description');
     const [isZoomed, setIsZoomed] = useState(false);
     const [added, setAdded] = useState(false);
+    const [activeImage, setActiveImage] = useState(0);
 
     if (!product) {
         return <div className="min-h-screen flex items-center justify-center pt-20"><h1 className="text-2xl font-bold">Product not found</h1></div>;
     }
+
+    // Build the image gallery: use the product's gallery if present, otherwise just the main image.
+    const galleryImages = product.gallery && product.gallery.length > 0 ? product.gallery : [product.image];
+    const currentImage = galleryImages[activeImage] ?? product.image;
 
     const handleAddToCart = () => {
         addItem(product);
@@ -82,7 +87,7 @@ export default function ProductDetailsPage({ params }: { params: Promise<{ id: s
                             onClick={() => setIsZoomed(true)}
                         >
                             <Image
-                                src={product.image}
+                                src={currentImage}
                                 alt={product.name}
                                 fill
                                 sizes="(max-width: 1024px) 100vw, 600px"
@@ -93,6 +98,31 @@ export default function ProductDetailsPage({ params }: { params: Promise<{ id: s
                                 {product.stock ? 'In Stock' : 'Out of Stock'}
                             </span>
                         </div>
+
+                        {/* Thumbnail gallery */}
+                        {galleryImages.length > 1 && (
+                            <div className="grid grid-cols-4 gap-3 mt-4">
+                                {galleryImages.map((img, i) => (
+                                    <button
+                                        key={i}
+                                        type="button"
+                                        onClick={() => setActiveImage(i)}
+                                        aria-label={`View image ${i + 1}`}
+                                        className={`relative aspect-square rounded-xl overflow-hidden border transition-colors ${
+                                            activeImage === i ? 'border-blue-500 ring-2 ring-blue-500/40' : 'border-slate-700/50 hover:border-blue-400/60'
+                                        }`}
+                                    >
+                                        <Image
+                                            src={img}
+                                            alt={`${product.name} thumbnail ${i + 1}`}
+                                            fill
+                                            sizes="120px"
+                                            className="object-cover"
+                                        />
+                                    </button>
+                                ))}
+                            </div>
+                        )}
                     </motion.div>
 
                     {/* Details Section */}
@@ -277,7 +307,7 @@ export default function ProductDetailsPage({ params }: { params: Promise<{ id: s
                             className="relative w-full max-w-5xl aspect-square md:aspect-video"
                         >
                             <Image
-                                src={product.image}
+                                src={currentImage}
                                 alt={product.name}
                                 fill
                                 className="object-contain"
