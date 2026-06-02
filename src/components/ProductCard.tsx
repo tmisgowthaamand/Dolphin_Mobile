@@ -11,9 +11,10 @@ import { motion } from 'framer-motion';
 
 interface ProductCardProps {
   product: Product;
+  priority?: boolean;
 }
 
-export default function ProductCard({ product }: ProductCardProps) {
+export default function ProductCard({ product, priority = false }: ProductCardProps) {
   const { currency, rates } = useCurrencyStore();
   const addItem = useCartStore(state => state.addItem);
   const [added, setAdded] = useState(false);
@@ -36,6 +37,7 @@ export default function ProductCard({ product }: ProductCardProps) {
             src={product.image}
             alt={product.name}
             fill
+            priority={priority}
             sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
             className="object-cover group-hover:scale-105 transition-transform duration-500"
           />

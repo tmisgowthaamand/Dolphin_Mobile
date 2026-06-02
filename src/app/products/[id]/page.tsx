@@ -90,6 +90,7 @@ export default function ProductDetailsPage({ params }: { params: Promise<{ id: s
                                 src={currentImage}
                                 alt={product.name}
                                 fill
+                                priority
                                 sizes="(max-width: 1024px) 100vw, 600px"
                                 className="object-cover group-hover:scale-105 transition-transform duration-500"
                             />

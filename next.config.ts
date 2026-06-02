@@ -17,6 +17,8 @@ const remoteImageHosts = [
   "tiimg.tistatic.com",
   "www.xerox.com",
   "media-ik.croma.com",
+  "apiv2.exceldisc.com",
+  "encrypted-tbn0.gstatic.com",
 ];
 
 const nextConfig: NextConfig = {

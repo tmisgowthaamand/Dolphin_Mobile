@@ -19,7 +19,7 @@ type CategoryId =
 function getCategory(product: Product): Exclude<CategoryId, 'all'> {
     const text = `${product.name} ${product.brand}`.toLowerCase();
 
-    if (/(iphone|smartphone|poco|vivo|oppo|realme|redmi|samsung|galaxy|5g\b|phone)/.test(text)) {
+    if (/(iphone|smartphone|poco|vivo|oppo|realme|redmi|galaxy|5g\b|\bphone\b|\bmobile\b)/.test(text)) {
         return 'mobiles';
     }
     if (/(laptop|thinkpad|thinkbook|vaio|notebook|macbook)/.test(text)) {
@@ -31,7 +31,7 @@ function getCategory(product: Product): Exclude<CategoryId, 'all'> {
     if (/(monitor|smart tv|\btv\b|display|led)/.test(text)) {
         return 'tv';
     }
-    if (/(neckband|speaker|home theatre|home theater|earbud|earphone|headphone|audio|soundbar|bullets|wireless|tws)/.test(text)) {
+    if (/(neckband|speaker|home theatre|home theater|earbud|earphone|headphone|headphones|airpods|audio|soundbar|bullets|wireless|tws)/.test(text)) {
         return 'audio';
     }
     if (/(ups|inverter|charger|battery)/.test(text)) {
@@ -142,7 +142,7 @@ export default function ProductsPage() {
                 {/* Products Grid */}
                 <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     <AnimatePresence mode="popLayout">
-                        {filteredProducts.map((product) => (
+                        {filteredProducts.map((product, index) => (
                             <motion.div
                                 layout
                                 key={product.id}
@@ -151,7 +151,7 @@ export default function ProductsPage() {
                                 exit={{ opacity: 0, scale: 0.9 }}
                                 transition={{ duration: 0.25 }}
                             >
-                                <ProductCard product={product} />
+                                <ProductCard product={product} priority={index < 4} />
                             </motion.div>
                         ))}
                     </AnimatePresence>
