@@ -16,6 +16,7 @@ const remoteImageHosts = [
   "m.media-amazon.com",
   "tiimg.tistatic.com",
   "www.xerox.com",
+  "media-ik.croma.com",
 ];
 
 const nextConfig: NextConfig = {

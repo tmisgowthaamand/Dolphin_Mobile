@@ -11,6 +11,8 @@ export default function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [mounted, setMounted] = useState(false);
+    const [isSearchOpen, setIsSearchOpen] = useState(false);
+    const [searchQuery, setSearchQuery] = useState('');
     const pathname = usePathname();
     const router = useRouter();
     const cartItemsCount = useCartStore((state) => state.getTotalItems());
@@ -26,6 +28,15 @@ export default function Navbar() {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+
+    const submitSearch = (e: React.FormEvent) => {
+        e.preventDefault();
+        const q = searchQuery.trim();
+        if (!q) return;
+        router.push(`/products?q=${encodeURIComponent(q)}`);
+        setIsSearchOpen(false);
+        setIsMobileMenuOpen(false);
+    };
 
     const showBackButton = pathname.startsWith('/products/') || ['/cart', '/checkout'].includes(pathname) || pathname.includes('-policy');
 

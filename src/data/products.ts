@@ -50,7 +50,7 @@ export const products: Product[] = [
     id: "2",
     name: "Canon Printer",
     priceINR: 14999,
-    image: "/images/products/product-2.jpeg",
+    image: "https://media-ik.croma.com/prod/https://media.tatacroma.com/Croma%20Assets/Computers%20Peripherals/Printers%20and%20Scanners/Images/273344_cjcltr.png?tr=w-640",
     brand: "Canon",
     description:
       "A compact Canon laser printer built for crisp, fast black-and-white documents at home or in a small office. Low running costs and reliable paper handling make it a workhorse for everyday printing. Easy to set up with both USB and wireless options.",
